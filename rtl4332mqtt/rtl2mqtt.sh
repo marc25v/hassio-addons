@@ -167,9 +167,10 @@ echo "RTL_433 Protocol =" $PROTOCOL
 
 #set -x  ## uncomment for MQTT logging...
 
-/usr/local/bin/rtl_433 -F json -R $PROTOCOL | while read line
-do
+/usr/local/bin/honeywell | while read line
+
+#do
   # Create file with touch /tmp/rtl_433.log if logging is needed
-  [ -w /tmp/rtl_433.log ] && echo $line >> rtl_433.log
-  echo $line | /usr/bin/mosquitto_pub -h $MQTT_HOST -u $MQTT_USER -P $MQTT_PASS -i RTL_433 -r -l -t $MQTT_TOPIC
-done
+#  [ -w /tmp/rtl_433.log ] && echo $line >> rtl_433.log
+#  echo $line | /usr/bin/mosquitto_pub -h $MQTT_HOST -u $MQTT_USER -P $MQTT_PASS -i RTL_433 -r -l -t $MQTT_TOPIC
+#done
