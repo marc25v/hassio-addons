@@ -49,8 +49,8 @@ RUN apk add --no-cache --virtual build-deps alpine-sdk cmake git libusb-dev && \
 #
 
 ENV MQTT_HOST="192.168.0.35"
-ENV MQTT_USER="mqtt-alarm"
-ENV MQTT_PASS="guest"
+ENV MQTT_USER="mqtt-alarm2"
+ENV MQTT_PASS="honeywell54312!"
 ENV MQTT_TOPIC="ha/sensor/alarm"
 
 CMD cd / && cp /config/honeywell2mqtt/honeywell2mqtt.sh /honeywell2mqtt.sh && chmod +x /honeywell2mqtt.sh && /honeywell2mqtt.sh
