@@ -1,9 +1,9 @@
 {
   "name": "Honeywell to MQTT Bridge",
-  "version": "0.5",
+  "version": "0.51",
   "slug": "honeywell2mqtt",
   "description": "A hass.io addon for a software defined radio (SDR) tuned to listen for 345MHz RF transmissions from Honeywell 5800 sensors and republish the data via MQTT.",
-  "url": "https://github.com/saadsyed/hassio-addons/tree/master/honeywell2mqtt",
+  "url": "https://github.com/marc25v/hassio-addons/tree/master/honeywell2mqtt",
   "startup": "before",
   "boot": "auto",
   "map": ["config:rw", "ssl"],
@@ -11,10 +11,10 @@
   "host_network": "False",
   "options":
   {
-    "mqtt_host": "hassio.local",
-    "mqtt_user": "",
-    "mqtt_password": "",
-    "mqtt_topic": "homeassistant/sensor/honeywell",
+    "mqtt_host": "192.168.0.35",
+    "mqtt_user": "mqtt-alarm2",
+    "mqtt_password": "honeywell54312!",
+    "mqtt_topic": "ha/sensor/alarm/",
     "protocol": 44
   },
   "schema":
