@@ -32,7 +32,7 @@ RUN apk add --no-cache --virtual build-deps alpine-sdk cmake git libusb-dev && \
     make install && \
     chmod +s /usr/local/bin/rtl_* && \
     cd /tmp/src/ && \
-    git clone https://github.com/saadsyed/HoneywellSecurity.git && \
+    git clone https://github.com/marc25v/HoneywellSecurity.git && \
     cd HoneywellSecurity/rpi && \
     chmod +x ./build.sh && \
     ./build.sh && \
@@ -48,9 +48,9 @@ RUN apk add --no-cache --virtual build-deps alpine-sdk cmake git libusb-dev && \
 # Use this variable when creating a container to specify the MQTT broker host.
 #
 
-ENV MQTT_HOST="hassio.local"
-ENV MQTT_USER="guest"
+ENV MQTT_HOST="192.168.0.35"
+ENV MQTT_USER="mqtt-alarm"
 ENV MQTT_PASS="guest"
-ENV MQTT_TOPIC="homeassistant/sensor/rtl433"
+ENV MQTT_TOPIC="ha/sensor/alarm"
 
 CMD cd / && cp /config/honeywell2mqtt/honeywell2mqtt.sh /honeywell2mqtt.sh && chmod +x /honeywell2mqtt.sh && /honeywell2mqtt.sh
