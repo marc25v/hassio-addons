@@ -17,9 +17,9 @@
   ],
   "options":
   {
-    "mqtt_host": "192.168.0.35",
+    "mqtt_host": "",
     "mqtt_user": "mqtt-alarm2",
-    "mqtt_password": "honeywell54312!",
+    "mqtt_password": "",
     "mqtt_topic": "ha/sensor/alarm/",
     "protocol": 44
   },
