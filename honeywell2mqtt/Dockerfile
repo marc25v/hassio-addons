@@ -21,7 +21,7 @@ LABEL Description="This image is used to start a script that will monitor for RF
 # First install software packages needed to compile rtl_sdr, Honeywell security and to publish MQTT events.
 #
 
-RUN apk add --no-cache --virtual build-deps alpine-sdk cmake git libusb-dev && \
+RUN apk add --no-cache --virtual build-deps alpine-sdk cmake git libusb-dev libusb mosquitto-clients jq alpine-sdk && \
     mkdir /tmp/src && \
     cd /tmp/src && \
     git clone https://git.osmocom.org/rtl-sdr.git && \
@@ -39,8 +39,7 @@ RUN apk add --no-cache --virtual build-deps alpine-sdk cmake git libusb-dev && \
     cp honeywell /usr/local/bin && \
     cd /tmp && \
     apk del build-deps && \
-    rm -r /tmp/src && \
-    apk add --no-cache libusb mosquitto-clients jq alpine-sdk
+    rm -r /tmp/src
 
 #
 # Define an environment variable
