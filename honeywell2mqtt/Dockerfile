@@ -34,9 +34,9 @@ RUN apk add --no-cache --virtual build-deps alpine-sdk cmake git libusb-dev && \
     cd /tmp/src/ && \
     git clone git://github.com/marc25v/HoneywellSecurity.git && \
     cd HoneywellSecurity/rpi && \
-    chmod +x build.sh && \
-    ./build.sh && \
-    cp honeywell /usr/local/bin && \
+#    chmod +x build.sh && \
+#    ./build.sh && \
+#    cp honeywell /usr/local/bin && \
     cd /tmp && \
     apk del build-deps && \
     rm -r /tmp/src && \
