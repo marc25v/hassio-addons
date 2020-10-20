@@ -52,4 +52,4 @@ ENV MQTT_USER="mqtt-alarm2"
 ENV MQTT_PASS="honeywell54312!"
 ENV MQTT_TOPIC="ha/sensor/alarm"
 
-CMD cd / && cp /config/honeywell2mqtt/honeywell2mqtt.sh /honeywell2mqtt.sh && chmod +x /honeywell2mqtt.sh && /honeywell2mqtt.sh
+#CMD cd / && cp /config/honeywell2mqtt/honeywell2mqtt.sh /honeywell2mqtt.sh && chmod +x /honeywell2mqtt.sh && /honeywell2mqtt.sh
