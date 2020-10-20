@@ -24,7 +24,7 @@ LABEL Description="This image is used to start a script that will monitor for RF
 RUN apk add --no-cache --virtual build-deps alpine-sdk cmake git libusb-dev libusb mosquitto-clients jq && \
     mkdir /tmp/src && \
     cd /tmp/src && \
-    git clone https://git.osmocom.org/rtl-sdr.git && \
+    git clone git://git.osmocom.org/rtl-sdr.git && \
     mkdir /tmp/src/rtl-sdr/build && \
     cd /tmp/src/rtl-sdr/build && \
     cmake ../ -DINSTALL_UDEV_RULES=ON -DDETACH_KERNEL_DRIVER=ON -DCMAKE_INSTALL_PREFIX:PATH=/usr/local && \
@@ -32,7 +32,7 @@ RUN apk add --no-cache --virtual build-deps alpine-sdk cmake git libusb-dev libu
     make install && \
     chmod +s /usr/local/bin/rtl_* && \
     cd /tmp/src/ && \
-    git clone https://github.com/marc25v/HoneywellSecurity.git && \
+    git clone git://github.com/marc25v/HoneywellSecurity.git && \
     cd HoneywellSecurity/rpi && \
     chmod +x ./build.sh && \
     ./build.sh && \
@@ -52,4 +52,4 @@ ENV MQTT_USER="mqtt-alarm2"
 ENV MQTT_PASS="honeywell54312!"
 ENV MQTT_TOPIC="ha/sensor/alarm"
 
-#CMD cd / && cp /config/honeywell2mqtt/honeywell2mqtt.sh /honeywell2mqtt.sh && chmod +x /honeywell2mqtt.sh && /honeywell2mqtt.sh
+CMD cd / && cp /config/honeywell2mqtt/honeywell2mqtt.sh /honeywell2mqtt.sh && chmod +x /honeywell2mqtt.sh && /honeywell2mqtt.sh
