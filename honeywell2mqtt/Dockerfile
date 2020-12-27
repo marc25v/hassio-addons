@@ -48,7 +48,7 @@ RUN apk add --no-cache --virtual build-deps g++ alpine-sdk cmake git libusb-dev 
 # Use this variable when creating a container to specify the MQTT broker host.
 #
 
-ENV MQTT_HOST="192.168.1.52"
+ENV MQTT_HOST="192.168.0.100"
 ENV MQTT_USER="mqtt-alarm2"
 ENV MQTT_PASS="honeywell54312!"
 ENV MQTT_TOPIC="ha/sensor/alarm"
