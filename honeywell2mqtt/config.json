@@ -5,9 +5,8 @@
   "description": "A hass.io addon for a software defined radio (SDR) tuned to listen for 345MHz RF transmissions from Honeywell 5800 sensors and republish the data via MQTT.",
   "url": "https://github.com/marc25v/hassio-addons/tree/master/honeywell2mqtt",
   "startup": "before",
-  "boot": "auto",
+  "usb": true,
   "map": ["config:rw", "ssl"],
-  "devices": ["/dev/bus/usb:/dev/bus/usb:rwm"],
   "host_network": "False",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
   "options":
@@ -16,7 +15,7 @@
     "mqtt_user": "mqtt-alarm2",
     "mqtt_password": "",
     "mqtt_topic": "ha/sensor/alarm/",
-    "protocol": 44
+    "protocol": 70
   },
   "schema":
   {
